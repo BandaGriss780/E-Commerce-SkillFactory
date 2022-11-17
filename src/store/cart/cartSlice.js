@@ -43,7 +43,7 @@ export const cartSlice = createSlice({
         },
         decrement: (state, { payload }) => {
             let product = state.productsCart.find((product) => product.id === payload);
-            if (product.qtyCart <= 0) {
+            if (product.qtyCart <= 1) {
                 return
             } else {
                 product.qtyCart -= 1
@@ -51,6 +51,10 @@ export const cartSlice = createSlice({
                 state.qtyProducts -= 1
             }
             return
+        },
+        deleteProduct: (state, { payload }) => {
+            state.qtyProducts -= 1
+            state.productsCart = state.productsCart.filter((e) => e.id !== payload.id)
         }
     }
 })
@@ -60,7 +64,8 @@ export const {
     setAllProducts,
     addProductCart,
     increment,
-    decrement
+    decrement,
+    deleteProduct
 } = cartSlice.actions;
 
 export default cartSlice.reducer

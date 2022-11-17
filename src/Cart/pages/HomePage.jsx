@@ -52,12 +52,7 @@ export const HomePage = () => {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
-
-      <section className="" style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", paddingBlock:"3vh"}}>
-          <h1>La tienda de Bandco</h1>
-          <h3>Llegaste al byte correcto, disfruta de nuestros productos!</h3>
-      </section>
+      </div> 
 
       <section style={{display:"flex", gap:"5vh", paddingBlock:"2vh", flexWrap: "wrap", margin:"0 auto", justifyContent:"space-evenly"}}>
       {products.slice(0, 3).map((product) => (

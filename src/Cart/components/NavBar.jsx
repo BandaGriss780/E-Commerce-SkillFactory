@@ -24,6 +24,7 @@ export const NavBar = () => {
                 </Link>
                 <span>Llegaste al byte correcto, disfruta de nuestros productos!</span>
             </div>
+            <img src="https://styles.redditmedia.com/t5_2xlfv/styles/communityIcon_1e2gusdbwz291.png?width=256&s=eef85ed9b16bcc634dc2e5067a45a0171416d32c" alt="" style={{width:"5rem", height:"5rem", objectFit:"cover"}} />
             <div className="navbar__item">
                 <div className="navbar__item__list">
                     <ul className="navbar__item__list__products">

@@ -1,36 +1,15 @@
 import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { increment, decrement } from "../../store/cart/cartSlice";
-// import { cartContext } from "../GlobalState/CartContext";
-// import { decrement, deleteProduct, increment } from "../actions";
+import { increment, decrement, deleteProduct } from "../../store/cart/cartSlice";
 
 export const CartPage = () => {
-
-
-    // const { shoppingCart, dispatch, qty, totalPrice } = useContext(cartContext)
-
-    // const handleToken = (token) => {
-    //     console.log("Hi");
-    // }
   const dispatch = useDispatch()
 
     const { productsCart, qtyProducts, totalPrice } = useSelector(state => state.cart)
 
     return (
         <>
-
-            {/* 
-            <div class="card" >
-                <img src="" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div> */}
-
-
             <div className="container">
                 <h1 className="main-heading">Shopping Cart</h1>
                 <div className="cart-container" style={{display:"flex", gap:"2.5vh", flexWrap: "wrap"}}>
@@ -63,13 +42,13 @@ export const CartPage = () => {
                                     >-</button>
                                 </div>
                                 <div className="total-prod-price">
-                                    {/* ${product.price * product.qty} */}
+                                    ${product.price * Number(product.qtyCart)}
                                 </div>
                                 <div className="total-prod-price">
-                                    <i
+                                    <button
                                         className="fas fa-trash-alt"
-                                    // onClick={() => dispatch(deleteProduct(product.id))}
-                                    ></i>
+                                        onClick={() => dispatch(deleteProduct(product))}
+                                    >ELIMINAR PRODUCTO</button>
                                 </div>
                             </div>
                         ))
