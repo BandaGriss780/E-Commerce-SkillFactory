@@ -3,6 +3,7 @@ import { startLogout } from '../../store/auth/thunks'
 import { startProducts } from '../../store/cart/thunks'
 import { myProducts } from '../../Cart/data/Products'
 import { useEffect } from 'react'
+import { Footer } from '../components/Footer'
 
 export const HomePage = () => {
 
@@ -20,6 +21,7 @@ export const HomePage = () => {
 
   return (
     <section className="">
+      <hr />
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
         <div class="carousel-indicators">
           <button
@@ -54,6 +56,8 @@ export const HomePage = () => {
         </button>
       </div> 
 
+      <hr />
+
       <section style={{display:"flex", gap:"5vh", paddingBlock:"2vh", flexWrap: "wrap", margin:"0 auto", justifyContent:"space-evenly"}}>
       {products.slice(0, 3).map((product) => (
         <div className="product-items" key={product.id} style={{border: "2px solid black", borderRadius: "1rem", padding:"1rem", maxWidth:"22rem", display:"flex", gap: "1rem", flexDirection:"column"}}>
@@ -76,9 +80,7 @@ export const HomePage = () => {
         </div>
         ))}
       </section>
-      {/* <footer style={{display:"flex", alignItems:"center", justifyContent:"center", background:"black", color:"white", padding:"3vh"}}>
-        <p>Powered by: <strong>Mathias Avolio, Gisele Escobar</strong> </p>
-      </footer> */}
+      <Footer />
     </section>
   )
 }
