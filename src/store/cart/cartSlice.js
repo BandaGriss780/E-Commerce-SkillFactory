@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { startAfter } from "firebase/firestore/lite";
 
 
 const initialState = {
@@ -17,15 +16,16 @@ export const cartSlice = createSlice({
             state.products = payload
         },
         addProductCart: (state, { payload }) => {
-            if (state.productsCart.includes(payload)) {
+
+            if (state.productsCart.includes(state.productsCart.find((product) => product.id == payload))) {
                 state.productsCart = state.productsCart
-                state.totalPrice += payload.price
-                return
+
+            } else if (!state.productsCart.includes(state.productsCart.find((product) => product.id == payload))) {
+
+                state.qtyProducts++
+                state.productsCart.push(state.products.find((product) => product.id == payload))
+                state.totalPrice += state.productsCart.find((product) => product.id == payload).price
             }
-            state.qtyProducts++
-            state.productsCart.push(payload)
-            state.totalPrice += payload.price
-            return
         },
         increment: (state, { payload }) => {
             const index = state.productsCart.findIndex((prod) => prod.id === payload)
@@ -37,7 +37,7 @@ export const cartSlice = createSlice({
             product.qtyCart += 1
 
             state.productsCart[index] = product
-            state.totalPrice += product.price;
+            state.totalPrice += state.productsCart.find((product) => product.id == payload).price
             state.qtyProducts += 1
             return
         },
@@ -45,16 +45,18 @@ export const cartSlice = createSlice({
             let product = state.productsCart.find((product) => product.id === payload);
             if (product.qtyCart <= 1) {
                 return
+
             } else {
                 product.qtyCart -= 1
-                state.totalPrice -= product.price;
+                state.totalPrice -= state.productsCart.find((product) => product.id == payload).price
                 state.qtyProducts -= 1
             }
             return
         },
         deleteProduct: (state, { payload }) => {
-            state.qtyProducts -= 1
-            state.productsCart = state.productsCart.filter((e) => e.id !== payload.id)
+            state.qtyProducts -= state.productsCart.find(product => product.id == payload).qtyCart
+            state.totalPrice -= state.productsCart.find(product => product.id == payload).qtyCart * state.productsCart.find(product => product.id == payload).price
+            state.productsCart = state.productsCart.filter((e) => e.id !== payload)
         }
     }
 })

@@ -28,7 +28,7 @@ export const AllProductsPage = () => {
             className="add-to-cart"
             type="button"
             style={{background: "#000", color: "#fff", borderRadius: ".75rem", display:"inline", padding:"1rem 2rem", fontSize: "1.25rem", fontWeight:"500"}}
-            onClick={() => dispatch(addProductCart(product))}
+            onClick={() => dispatch(addProductCart(product.id))}
           // onClick={console.log(product)}
 
           >
