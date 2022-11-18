@@ -86,3 +86,88 @@ nav ul a {
     font-size: 0.8rem;
   }
 }
+.main-heading {
+  margin: 20px 0;
+}
+
+.each-product {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px 10px;
+  align-items: center;
+  place-items: center;
+  margin: 10px 0;
+}
+
+.each-product .responsive-img {
+  width: 100%;
+  display: block;
+}
+
+.each-product .prod-cta button {
+  color: #060614e7;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 2px solid #060614e7;
+}
+
+.each-product .prod-cta button:hover {
+  color: #ffffff;
+  background-color: #060614e7;
+  border: 1px solid #060614e7;
+}
+
+.cart-quantity {
+  padding: 0 10px;
+}
+
+/* Payment */
+
+.cart-summry {
+  margin: 30px 0;
+  width: 350px;
+  max-width: 100%;
+}
+
+.total-prod-price button {
+  cursor: pointer;
+  color: #060614e7;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 2px solid #060614e7;
+  
+}
+
+.total-prod-price button:hover{
+  color: #ffffff;
+  background-color: #e91818e7;
+  border: 2px solid #060614e7;
+}
+
+.pay-total-items,
+.total-price-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+ 
+}
+.checkout{
+  cursor: pointer;
+  color: #060614e7;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 2px solid #060614e7;
+}
+.checkout:hover{
+  color: #ffffff;
+  background-color: #36363ae7;
+  border: 1px solid #060614e7;
+}
+
+
