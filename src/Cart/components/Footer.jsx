@@ -3,7 +3,7 @@ import avalithLogo from "./avalith-logo.svg";
 
 export const Footer = () => {
   return (
-    <div className="footer__wrapper shadow">
+    <div className="footer__wrapper">
       <div className="footer__container">
         <div className="footer__people">
           <p>
