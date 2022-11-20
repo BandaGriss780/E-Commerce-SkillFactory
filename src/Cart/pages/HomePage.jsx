@@ -4,6 +4,7 @@ import { startProducts } from "../../store/cart/thunks";
 import { myProducts } from "../../Cart/data/Products";
 import { useEffect } from "react";
 import { Footer } from "../components/Footer";
+import "./styles.css";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -78,8 +79,7 @@ export const HomePage = () => {
             className="product-items"
             key={product.id}
             style={{
-              border: "2px solid black",
-              borderRadius: "1rem",
+              borderRadius: ".5rem",
               padding: "1rem",
               maxWidth: "22rem",
               display: "flex",
@@ -88,7 +88,7 @@ export const HomePage = () => {
             }}
           >
             <div className="product-image">
-              <img src={product.img} alt="not-found" style={{ width: "20rem", height: "10rem", objectFit: "cover" }} />
+              <img src={product.img} alt="not-found" style={{ width: "20rem", height: "10rem", objectFit: "contain" }} />
             </div>
             <div className="product-details">
               <h3 style={{ textAlign: "center", fontSize: "2rem" }}>{product.name}</h3>
