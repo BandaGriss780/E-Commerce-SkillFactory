@@ -5,6 +5,7 @@ import { myProducts } from "../../Cart/data/Products";
 import { useEffect } from "react";
 import { Footer } from "../components/Footer";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -75,48 +76,57 @@ export const HomePage = () => {
 
       <section style={{ display: "flex", gap: "5vh", paddingBlock: "2vh", flexWrap: "wrap", margin: "0 auto", justifyContent: "space-evenly" }}>
         {products.slice(0, 3).map((product) => (
-          <div
-            className="product-items"
-            key={product.id}
-            style={{
-              borderRadius: ".5rem",
-              padding: "1rem",
-              maxWidth: "22rem",
-              display: "flex",
-              gap: "1rem",
-              flexDirection: "column",
-            }}
-          >
-            <div className="product-image">
-              <img src={product.img} alt="not-found" style={{ width: "20rem", height: "10rem", objectFit: "contain" }} />
-            </div>
-            <div className="product-details">
-              <h3 style={{ textAlign: "center", fontSize: "2rem" }}>{product.name}</h3>
-              <p style={{ textAlign: "center", fontSize: "1.75rem", fontWeight: "500" }}>${product.price}</p>
-            </div>
-            {product.status === "hot" ? (
-              <div
-                className="hot"
-                style={{ background: "red", color: "#ff0", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "1.25rem" }}
-              >
-                <h3>HOT</h3>
+          <Link className="" to="/products">
+            <div
+              className="product-items"
+              key={product.id}
+              style={{
+                borderRadius: ".5rem",
+                padding: "1rem",
+                maxWidth: "22rem",
+                display: "flex",
+                gap: "1rem",
+                flexDirection: "column",
+              }}
+            >
+              <div className="product-image">
+                <img src={product.img} alt="not-found" style={{ width: "20rem", height: "10rem", objectFit: "contain" }} />
               </div>
-            ) : (
-              <div
-                className="new"
-                style={{
-                  background: "lightgreen",
-                  color: "#black",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: "1.25rem",
-                }}
-              >
-                <h3>NEW</h3>
+              <div className="product-details">
+                <h3 style={{ textAlign: "center", fontSize: "2rem" }}>{product.name}</h3>
+                <p style={{ textAlign: "center", fontSize: "1.75rem", fontWeight: "500" }}>${product.price}</p>
               </div>
-            )}
-          </div>
+              {product.status === "hot" ? (
+                <div
+                  className="hot"
+                  style={{
+                    background: "red",
+                    color: "#ff0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "1.25rem",
+                  }}
+                >
+                  <h3>HOT</h3>
+                </div>
+              ) : (
+                <div
+                  className="new"
+                  style={{
+                    background: "lightgreen",
+                    color: "#black",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "1.25rem",
+                  }}
+                >
+                  <h3>NEW</h3>
+                </div>
+              )}
+            </div>
+          </Link>
         ))}
       </section>
       <Footer />
