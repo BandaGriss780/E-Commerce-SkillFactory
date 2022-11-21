@@ -6,7 +6,7 @@
 
 <em> How to start the proyect with Vite: <em>
 
-Asegúrate de tener instalado Node.js  en tu equipo.
+Asegúrate de tener instalado Node.js en tu equipo.
 
 Puedes comprobarlo ejecutando en la terminal:
 
@@ -18,23 +18,23 @@ Entre los diferentes frameworks que te sugiere, elige el que necesites, en nuest
 
 ✔ Project name: … vite-project
 ? Select a framework: › - Use arrow-keys. Return to submit.
-    Vanilla
-    Vue
-❯   React
-    Preact
-    Lit
-    Svelte
+Vanilla
+Vue
+❯ React
+Preact
+Lit
+Svelte
 
 ? Select a variant: › - Use arrow-keys. Return to submit.
-❯   JavaScript
-    TypeScript
+❯ JavaScript
+TypeScript
 Scaffolding project in /Users/carlosazaustre/dev/vite-project...
 
 Done. Now run:
 
-  cd vite-project
-  npm install
-  npm run dev
+cd vite-project
+npm install
+npm run dev
 Ejecutar el proyecto.
 Una vez creado, dirígete al directorio creado y ejecuta el comando de instalación:
 
@@ -44,17 +44,17 @@ Una vez instaladas las dependencias, ejecuta el comando de desarrollo y ya puede
 
 $ npm run dev
 
-  VITE v3.1.8 ready in 396 ms
+VITE v3.1.8 ready in 396 ms
 
-  > Local: http://localhost:5173/
-  > Network: use `--host` to expose
-  
-  :computer: :computer: :computer: :computer:
-  
+> Local: http://localhost:5173/
+> Network: use `--host` to expose
+
+:computer: :computer: :computer: :computer:
+
 ## :hammer:Funcionalidades del proyecto
 
-- `Funcionalidad 1`: login proceso que controla el acceso individual utilizando credenciales mediante Firebase.- 
-- `Funcionalidad 2`: landing page con productos en exposición y carrousel.- 
+- `Funcionalidad 1`: login proceso que controla el acceso individual utilizando credenciales mediante Firebase.-
+- `Funcionalidad 2`: landing page con productos en exposición y carrousel.-
 - `Funcionalidad 3`: componente ALL PRODUCTS para seleccionar los productos a comprar.-
 - `Funcionalidad 4`: carrito de compras propiamente dicho (agrega productos, suma productos, elimina productos, finaliza compra).-
 
@@ -81,8 +81,10 @@ $ npm run dev
 :red_circle: "@types/react-dom": "^18.0.6"
 :red_circle: "@vitejs/plugin-react": "^2.1.0"
 :red_circle: "vite": "^3.1.0"
+:red_circle: "react-icons": "^4.6.0"
 
 ## How to clone our project:
+
 git-clone - Clone a repository into a new directory
 
 SYNOPSIS git clone [--template=] [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror] [-o ] [-b ] [-u ] [--reference ] [--dissociate] [--separate-git-dir ] [--depth ] [--[no-]single-branch] [--no-tags] [--recurse-submodules[=]] [--[no-]shallow-submodules] [--[no-]remote-submodules] [--jobs ] [--sparse] [--[no-]reject-shallow] [--filter= [--also-filter-submodules]] [--] []
@@ -92,4 +94,3 @@ DESCRIPTION Clones a repository into a newly created directory, creates remote-t
 After the clone, a plain git fetch without arguments will update all the remote-tracking branches, and a git pull without arguments will in addition merge the remote master branch into the current master branch, if any (this is untrue when "--single-branch" is given; see below).
 
 This default configuration is achieved by creating references to the remote branch heads under refs/remotes/origin and by initializing remote.origin.url and remote.origin.fetch configuration variables.
-
